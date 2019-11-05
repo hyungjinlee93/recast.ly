@@ -8,6 +8,11 @@ class App extends React.Component {
     super(props);
   }
 
+  handleClick(event) {
+    console.log(event);
+    console.log(event.target);
+  }
+
   render() {
     return (
       <div>
@@ -21,7 +26,7 @@ class App extends React.Component {
             <div><VideoPlayer video={exampleVideoData}></VideoPlayer></div>
           </div>
           <div className="col-md-5">
-            <div><VideoList videos={exampleVideoData}/></div>
+            <div><VideoList videos={exampleVideoData} fn={this.handleClick.bind(this)} /></div>
           </div>
         </div>
       </div>
