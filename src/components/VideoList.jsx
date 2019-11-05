@@ -1,12 +1,18 @@
+import VideoListEntry from './VideoListEntry.js';
+
+console.log(VideoListEntry);
+
 var VideoList = () => (
   <div className="video-list">
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><VideoListEntry></VideoListEntry></div>
+    <div><VideoListEntry></VideoListEntry></div>
+    <div><VideoListEntry></VideoListEntry></div>
+    <div><VideoListEntry></VideoListEntry></div>
+    <div><VideoListEntry></VideoListEntry></div>
   </div>
 );
+// mapp the above stuff so we get diff videos
+
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
