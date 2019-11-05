@@ -16,14 +16,13 @@
 class VideoListEntry extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props);
-    // this.key = props.video.id.videoId;
+    
   }
 
 
   render() {
     return (
-      <div className="video-list-entry media" onClick={this.props.fn}>
+      <div className="video-list-entry media" onClick={this.props.fn} id={this.props.video.id.videoId}>
         <div className="media-left media-middle">
           <img className="media-object" src={this.props.video.snippet.thumbnails.default.url} alt={this.props.video.snippet.thumbnails.high.url} />
         </div>

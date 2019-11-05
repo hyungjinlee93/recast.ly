@@ -6,11 +6,19 @@ import exampleVideoData from '../data/exampleVideoData.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      url: 'https://www.youtube.com/embed/' + exampleVideoData[0].id.videoId + '?autoplay=1',
+      title: exampleVideoData[0].snippet.title,
+      description: exampleVideoData[0].snippet.description
+    };
   }
 
   handleClick(event) {
-    console.log(event);
-    console.log(event.target);
+    this.setState({
+      url: 'https://www.youtube.com/embed/' + event.currentTarget.id + '?autoplay=1',
+      title: event.currentTarget.getElementsByClassName('video-list-entry-title')[0].innerText,
+      description: event.currentTarget.getElementsByClassName('video-list-entry-detail')[0].innerText
+    });
   }
 
   render() {
@@ -23,7 +31,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><VideoPlayer video={exampleVideoData}></VideoPlayer></div>
+            <div><VideoPlayer video={this.state}></VideoPlayer></div>
           </div>
           <div className="col-md-5">
             <div><VideoList videos={exampleVideoData} fn={this.handleClick.bind(this)} /></div>
