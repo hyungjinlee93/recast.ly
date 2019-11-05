@@ -1,17 +1,13 @@
 import VideoListEntry from './VideoListEntry.js';
 
-console.log(VideoListEntry);
 
-var VideoList = () => (
+var VideoList = (props) => (
   <div className="video-list">
-    <div><VideoListEntry></VideoListEntry></div>
-    <div><VideoListEntry></VideoListEntry></div>
-    <div><VideoListEntry></VideoListEntry></div>
-    <div><VideoListEntry></VideoListEntry></div>
-    <div><VideoListEntry></VideoListEntry></div>
+    {props.videos.map(video =>
+      <VideoListEntry video={video}/>
+    )}
   </div>
 );
-// mapp the above stuff so we get diff videos
 
 
 // PropTypes tell other developers what `props` a component expects
