@@ -1,8 +1,6 @@
-
-var searchYouTube = (options, callback) => {
+var searchYouTube = (options, callback = () => {}) => {
   // TODO
-  console.log(options);
-  console.log(options['query']);
+
   var key = options['key'];
   var query = options['query'] === undefined ? 'dogs' : options['query'];
   var max = options['max'] === undefined ? 5 : options['max'];
